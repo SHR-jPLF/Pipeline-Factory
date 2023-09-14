@@ -1,7 +1,6 @@
 node {
-    checkout scm
     docker.image('alpine').inside {
         sh 'env'
     }
-    // load ../exampleProject
+    // load ../${JOB_NAME}/resolved.groovy
 }

@@ -43,3 +43,5 @@ pipeline {
 """
 rendered = Template(template).render(stages=stages)
 print(rendered)
+with open('resolved.groovy', 'w') as f:
+    f.write(rendered)
