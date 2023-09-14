@@ -1,11 +1,13 @@
 import logging 
 import yaml
+from os import environ as env 
 from jinja2 import Template
 from github import Github
 from github import Auth 
 from github.GithubException import *
 
-token = open('../access_token.secret').read()
+# token = open('../access_token.secret').read()
+token = env.get('GH_TOKEN')
 auth = Auth.Token(token)
 gh = Github(auth=auth)
 org = gh.get_organization('SHR-jPLF')
