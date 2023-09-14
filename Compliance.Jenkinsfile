@@ -1,6 +1,4 @@
 node {
-    docker.image('alpine').inside {
-        sh 'env'
-    }
-    // load ../${JOB_NAME}/resolved.groovy
+    docker.image('ghcr.io/shr-jplf/pipeline-factory:main').inside{} 
+    load "../${JOB_BASE_NAME}/resolved.groovy"
 }
